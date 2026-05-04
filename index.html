@@ -177,28 +177,44 @@
           <td colspan="2">Freier Fall</td>
         </tr>
         <tr>
+          <td class="formula"><span class="aVar">a</span> <span class="plain">= </span><span class="gVar">g</span></td>
+          <td class="meaning">Beim freien Fall wird die allgemeine Beschleunigung <span class="aVar">a</span> durch die Erdbeschleunigung <span class="gVar">g</span> ersetzt.</td>
+        </tr>
+        <tr>
           <td class="formula"><span class="gVar">g</span> <span class="plain">= 9,81 m/s² ≈ 10 m/s²</span></td>
-          <td class="meaning">Erdbeschleunigung auf der Erde.</td>
+          <td class="meaning">Erdbeschleunigung auf der Erde. <span class="gVar">g</span> ist nicht die Gewichtskraft, sondern die Beschleunigung.</td>
         </tr>
         <tr>
           <td class="formula"><span class="v">v</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = </span><span class="gVar">g</span><span class="plain"> · </span><span class="t">t</span></td>
-          <td class="meaning">Geschwindigkeit nach der Fallzeit, wenn der Körper aus der Ruhe fällt.</td>
+          <td class="meaning">Geschwindigkeit nach der Fallzeit, wenn der Körper aus der Ruhe fällt. Diese vereinfachte Formel gilt für <span class="v">v₀ = 0</span>.</td>
         </tr>
         <tr>
           <td class="formula"><span class="x">x</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = ½ · </span><span class="gVar">g</span><span class="plain"> · </span><span class="t">t</span><sup>2</sup></td>
-          <td class="meaning">Gefallene Strecke nach der Zeit <span class="t">t</span>.</td>
+          <td class="meaning">Gefallene Strecke nach der Zeit <span class="t">t</span>, wenn der Körper aus der Ruhe fällt. Diese vereinfachte Formel gilt für <span class="v">v₀ = 0</span>.</td>
         </tr>
         <tr>
           <td class="formula"><span class="t">t</span> <span class="plain">= √(2</span><span class="x">x</span><span class="plain"> / </span><span class="gVar">g</span><span class="plain">)</span></td>
-          <td class="meaning">Fallzeit berechnen, wenn die Fallstrecke <span class="x">x</span> gegeben ist.</td>
+          <td class="meaning">Fallzeit berechnen, wenn die Fallstrecke <span class="x">x</span> gegeben ist und der Körper aus der Ruhe fällt.</td>
         </tr>
         <tr>
           <td class="formula"><span class="v">v</span> <span class="plain">= √(2</span><span class="gVar">g</span><span class="plain"> · </span><span class="x">x</span><span class="plain">)</span></td>
-          <td class="meaning">Geschwindigkeit nach einer bestimmten Fallstrecke <span class="x">x</span>.</td>
+          <td class="meaning">Geschwindigkeit nach einer bestimmten Fallstrecke <span class="x">x</span>, wenn der Körper aus der Ruhe fällt.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="v">v</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = </span><span class="gVar">g</span><span class="plain"> · </span><span class="t">t</span><span class="plain"> + </span><span class="v">v₀</span></td>
+          <td class="meaning">Geschwindigkeit beim freien Fall mit Anfangsgeschwindigkeit nach unten. Diese allgemeinere Formel gilt, wenn <span class="v">v₀ ≠ 0</span>.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="x">x</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = ½ · </span><span class="gVar">g</span><span class="plain"> · </span><span class="t">t</span><sup>2</sup><span class="plain"> + </span><span class="v">v₀</span><span class="plain"> · </span><span class="t">t</span><span class="plain"> + </span><span class="x">x₀</span></td>
+          <td class="meaning">Allgemeine Formel für die gefallene Strecke beim freien Fall mit Anfangsgeschwindigkeit. Wenn bei <span class="x">x₀ = 0</span> gestartet wird, fällt <span class="x">x₀</span> weg.</td>
         </tr>
         <tr>
           <td class="formula"><span class="x">h</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = </span><span class="x">h₀</span><span class="plain"> − ½ · </span><span class="gVar">g</span><span class="plain"> · </span><span class="t">t</span><sup>2</sup></td>
-          <td class="meaning">Höhe über dem Boden nach der Zeit <span class="t">t</span>, wenn Start aus Höhe <span class="x">h₀</span>.</td>
+          <td class="meaning">Höhe über dem Boden nach der Zeit <span class="t">t</span>, wenn Start aus Höhe <span class="x">h₀</span> und der Körper aus der Ruhe fällt. Unterschied: <span class="x">x(t)</span> ist die gefallene Strecke, <span class="x">h(t)</span> ist die noch übrige Höhe über dem Boden.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="x">h</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = </span><span class="x">h₀</span><span class="plain"> − (½ · </span><span class="gVar">g</span><span class="plain"> · </span><span class="t">t</span><sup>2</sup><span class="plain"> + </span><span class="v">v₀</span><span class="plain"> · </span><span class="t">t</span><span class="plain">)</span></td>
+          <td class="meaning">Höhe über dem Boden bei freiem Fall mit Anfangsgeschwindigkeit nach unten. Diese Formel ist praktisch, wenn direkt die Resthöhe gesucht ist.</td>
         </tr>
 
         <tr class="section-row">
