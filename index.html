@@ -2,464 +2,218 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Formelsammlung Physik: Bewegungen</title>
-  <meta name="description" content="Große und übersichtliche Formelsammlung zu Bewegungen in Physik: Geschwindigkeit, Strecke, Zeit, Beschleunigung, Kraft und Umrechnung.">
+  <meta name="description" content="Schlichte Formelsammlung zu Bewegungen in Physik als übersichtliche Tabelle.">
   <style>
     :root {
-      --bg: oklch(0.96 0.015 90);
-      --paper: oklch(0.985 0.008 95);
-      --ink: oklch(0.24 0.03 250);
-      --muted: oklch(0.48 0.02 250);
-      --line: oklch(0.87 0.018 90);
-      --speed: oklch(0.79 0.09 220);
-      --acc: oklch(0.84 0.12 140);
-      --force: oklch(0.82 0.11 25);
-      --unit: oklch(0.87 0.08 300);
-      --shadow: 0 22px 60px rgba(33, 42, 69, 0.08);
-      --radius: 24px;
+      --bg: #f3f4f6;
+      --paper: #ffffff;
+      --ink: #171717;
+      --muted: #5f6368;
+      --line: #d9dde3;
+      --head: #eef2f7;
+      --section: #f7f9fc;
+      --v: #1e5bb8;
+      --x: #18804b;
+      --t: #8c5a16;
+      --a: #7a2bb8;
+      --f: #c24b15;
+      --m: #9b2c7f;
+      --g: #0b7285;
     }
 
     * { box-sizing: border-box; }
-    html {
-      scroll-behavior: smooth;
-      background:
-        radial-gradient(circle at top left, rgba(78, 127, 192, 0.12), transparent 26rem),
-        radial-gradient(circle at top right, rgba(76, 167, 124, 0.12), transparent 22rem),
-        linear-gradient(180deg, #fbfaf7 0%, #f4efe7 100%);
-    }
     body {
       margin: 0;
+      background: var(--bg);
       color: var(--ink);
-      font-family: "Avenir Next", "Segoe UI", sans-serif;
-      background: transparent;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
     }
     .page {
-      width: min(1180px, calc(100vw - 28px));
-      margin: 0 auto;
-      padding: 22px 0 44px;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.82fr);
-      gap: 18px;
-      align-items: stretch;
-    }
-    .hero-card,
-    .nav-card,
-    .table-shell,
-    .tip-card {
-      background: color-mix(in srgb, var(--paper) 93%, white 7%);
+      width: min(1120px, calc(100vw - 24px));
+      margin: 18px auto;
+      background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .hero-card {
-      padding: 28px 28px 24px;
-      min-height: 320px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -10% -24% auto;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at center, rgba(76, 167, 124, 0.2), rgba(76, 167, 124, 0) 68%);
-      pointer-events: none;
-    }
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--muted);
-      font: 700 0.82rem/1 "Avenir Next", "Segoe UI", sans-serif;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      padding: 26px 24px 30px;
     }
     h1 {
-      margin: 0;
-      max-width: 11ch;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.8rem, 8vw, 5.5rem);
-      line-height: 0.94;
-      letter-spacing: -0.05em;
-    }
-    .lead {
-      margin: 14px 0 0;
-      max-width: 58ch;
-      color: var(--muted);
-      font-size: clamp(1rem, 2.1vw, 1.14rem);
-      line-height: 1.5;
-    }
-    .formula-strip {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 22px;
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 42px;
-      padding: 0 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      border: 1px solid rgba(255,255,255,0.5);
-      background: white;
-    }
-    .nav-wrap {
-      position: sticky;
-      top: 12px;
-      align-self: start;
-    }
-    .nav-card {
-      padding: 20px;
-      background: rgba(252, 251, 248, 0.92);
-      backdrop-filter: blur(10px);
-    }
-    .nav-title {
       margin: 0 0 6px;
-      font-size: 1.02rem;
-      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      line-height: 1.1;
+      font-weight: 700;
     }
-    .nav-copy {
-      margin: 0 0 14px;
+    .sub {
+      margin: 0 0 18px;
       color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.45;
+      font-size: 1rem;
     }
-    .nav-list {
-      display: grid;
-      gap: 8px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
     }
-    .nav-link {
-      display: block;
-      padding: 11px 12px;
-      border-radius: 14px;
-      background: white;
+    th, td {
       border: 1px solid var(--line);
-      color: var(--ink);
-      text-decoration: none;
-      font-weight: 700;
+      padding: 14px 14px;
+      vertical-align: top;
+      text-align: left;
     }
-    .nav-link:hover {
-      transform: translateY(-1px);
-    }
-    .content {
-      margin-top: 18px;
-      display: grid;
-      gap: 18px;
-    }
-    .tip-card {
-      padding: 18px 20px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 14px;
-      align-items: center;
-    }
-    .tip-title {
-      margin: 0 0 4px;
-      font-size: 1rem;
-      font-weight: 800;
-    }
-    .tip-copy {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-    .tip-badge {
-      padding: 10px 14px;
-      border-radius: 14px;
-      background: #1f3f76;
-      color: #fffefb;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-    .table-shell {
-      overflow: hidden;
-    }
-    .table-head {
-      display: grid;
-      grid-template-columns: 0.95fr 1.2fr 1.85fr;
-      gap: 0;
-      padding: 16px 18px;
-      background: linear-gradient(180deg, rgba(36, 43, 64, 0.96), rgba(30, 37, 56, 0.98));
-      color: #fffefb;
-      font-weight: 800;
-      letter-spacing: 0.01em;
-    }
-    .group {
-      border-top: 1px solid var(--line);
-      scroll-margin-top: 90px;
-    }
-    .group-header {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 12px;
-      align-items: center;
-      padding: 18px 18px 12px;
-      background: color-mix(in srgb, var(--paper) 92%, white 8%);
-    }
-    .group-title {
-      margin: 0;
-      font-size: clamp(1.25rem, 2vw, 1.6rem);
-      line-height: 1.08;
-      font-weight: 900;
-    }
-    .group-copy {
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.45;
-    }
-    .tag {
-      padding: 10px 14px;
-      border-radius: 999px;
-      font: 800 0.82rem/1 "Avenir Next", "Segoe UI", sans-serif;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      border: 1px solid rgba(36, 43, 64, 0.08);
-    }
-    .speed { background: var(--speed); }
-    .acc { background: var(--acc); }
-    .force { background: var(--force); }
-    .unit { background: var(--unit); }
-    .rows {
-      display: grid;
-    }
-    .row {
-      display: grid;
-      grid-template-columns: 0.95fr 1.2fr 1.85fr;
-      gap: 0;
-      align-items: stretch;
-      border-top: 1px solid rgba(36, 43, 64, 0.08);
-    }
-    .cell {
-      padding: 18px;
-      min-width: 0;
-    }
-    .row:nth-child(odd) .cell {
-      background: rgba(255, 255, 255, 0.42);
-    }
-    .formula {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.35rem, 3vw, 2rem);
-      line-height: 1.15;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-    .solve {
-      color: #1f3f76;
-      font-weight: 800;
+    th {
+      background: var(--head);
       font-size: 1.02rem;
-      line-height: 1.35;
+      font-weight: 700;
     }
-    .meaning {
-      color: var(--ink);
-      line-height: 1.5;
+    td.formula {
+      width: 32%;
+      font-size: 1.65rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    td.meaning {
+      width: 68%;
       font-size: 1rem;
     }
-    .footer {
-      margin-top: 14px;
-      padding: 0 6px;
+    .section-row td {
+      background: var(--section);
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 12px 14px;
+    }
+    .hint {
+      display: block;
+      margin-top: 8px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.94rem;
+      font-weight: 400;
     }
-    @media (max-width: 920px) {
-      .hero { grid-template-columns: 1fr; }
-      .nav-wrap { position: static; }
-    }
+    .v { color: var(--v); }
+    .x { color: var(--x); }
+    .t { color: var(--t); }
+    .aVar { color: var(--a); }
+    .fVar { color: var(--f); }
+    .mVar { color: var(--m); }
+    .gVar { color: var(--g); }
+    .plain { color: var(--ink); }
+    sup { font-size: 0.7em; }
     @media (max-width: 760px) {
-      .page { width: min(100vw - 18px, 1180px); }
-      .hero-card, .nav-card, .table-shell, .tip-card { border-radius: 18px; }
-      .hero-card { padding: 20px 18px 18px; min-height: auto; }
-      .table-head { display: none; }
-      .group-header { grid-template-columns: 1fr; }
-      .tip-card { grid-template-columns: 1fr; }
-      .row {
-        grid-template-columns: 1fr;
+      .page {
+        width: min(100vw - 12px, 1120px);
+        padding: 14px 12px 18px;
       }
-      .cell {
-        padding-top: 10px;
-        padding-bottom: 10px;
+      th, td {
+        padding: 10px 9px;
       }
-      .cell[data-label]::before {
-        content: attr(data-label);
-        display: block;
-        margin-bottom: 7px;
-        color: var(--muted);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+      td.formula {
+        font-size: 1.2rem;
+        width: 42%;
+      }
+      td.meaning {
+        font-size: 0.94rem;
+        width: 58%;
+      }
+      .hint {
+        font-size: 0.86rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <section class="hero-card">
-        <p class="eyebrow">Physik · Bewegungen</p>
-        <h1>Formelsammlung</h1>
-        <p class="lead">Die Tabelle aus dem Dokument als große, sauber sortierte Lernseite. Erst kommen Geschwindigkeit, Strecke und Zeit, dann Beschleunigung, danach Kraft und zum Schluss die Umrechnungen. So findet man schneller die richtige Formel.</p>
-        <div class="formula-strip">
-          <span class="pill">v = Δx / Δt</span>
-          <span class="pill">a = Δv / Δt</span>
-          <span class="pill">F = m · a</span>
-          <span class="pill">1 m/s = 3,6 km/h</span>
-        </div>
-      </section>
-      <aside class="nav-wrap">
-        <section class="nav-card">
-          <p class="nav-title">Schnell finden</p>
-          <p class="nav-copy">Die Formeln sind nach Lernlogik sortiert: erst Grundgrößen, dann Bewegung, dann Beschleunigung und Kraft.</p>
-          <nav class="nav-list" aria-label="Abschnitte">
-            <a class="nav-link" href="#grundlagen">Grundlagen: v, x, t</a>
-            <a class="nav-link" href="#beschleunigung">Beschleunigung</a>
-            <a class="nav-link" href="#kraft">Kraft und Masse</a>
-            <a class="nav-link" href="#umrechnung">Umrechnung</a>
-          </nav>
-        </section>
-      </aside>
-    </header>
+  <main class="page">
+    <h1>Formelsammlung Physik: Bewegungen</h1>
+    <p class="sub">Reduziert auf die wichtigsten Grundformeln plus freier Fall. Umformungen stehen nicht extra drin.</p>
 
-    <main class="content">
-      <section class="tip-card">
-        <div>
-          <p class="tip-title">Mini-Merksatz</p>
-          <p class="tip-copy">v gesucht → Geschwindigkeitsformel. x gesucht → Weg- oder Ortsformel. Mit a → Beschleunigungsformel. Ohne a → einfache Formel ohne Beschleunigung.</p>
-        </div>
-        <div class="tip-badge">Ohne freien Fall</div>
-      </section>
+    <table aria-label="Formelsammlung Bewegungen">
+      <thead>
+        <tr>
+          <th>Formel</th>
+          <th>Bedeutung / Wann anwenden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="section-row">
+          <td colspan="2">Grundlagen: Bewegung</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="v">v</span> <span class="plain">=</span> <span class="x">Δx</span> <span class="plain">/</span> <span class="t">Δt</span></td>
+          <td class="meaning">
+            Geschwindigkeit berechnen, wenn Strecke und Zeit gegeben sind.
+            <span class="hint">Für Strecke oder Zeit einfach umformen.</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="x">x</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = </span><span class="v">v₀</span><span class="plain"> · </span><span class="t">t</span><span class="plain"> + </span><span class="x">x₀</span></td>
+          <td class="meaning">Ort oder Strecke bei konstanter Geschwindigkeit.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="aVar">a</span> <span class="plain">=</span> <span class="v">Δv</span> <span class="plain">/</span> <span class="t">Δt</span></td>
+          <td class="meaning">
+            Beschleunigung berechnen, wenn sich die Geschwindigkeit ändert.
+            <span class="hint">Für Geschwindigkeitsänderung oder Zeit ebenfalls umformbar.</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="v">v</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = </span><span class="aVar">a</span><span class="plain"> · </span><span class="t">t</span><span class="plain"> + </span><span class="v">v₀</span></td>
+          <td class="meaning">Geschwindigkeit nach einer Zeit bei Beschleunigung oder Bremsen.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="x">x</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = ½ · </span><span class="aVar">a</span><span class="plain"> · </span><span class="t">t</span><sup>2</sup><span class="plain"> + </span><span class="v">v₀</span><span class="plain"> · </span><span class="t">t</span><span class="plain"> + </span><span class="x">x₀</span></td>
+          <td class="meaning">Ort oder Strecke bei Beschleunigung oder Bremsen.</td>
+        </tr>
 
-      <section class="table-shell" aria-label="Formelsammlung Bewegungen">
-        <div class="table-head">
-          <div>Formel</div>
-          <div>Gesucht / Thema</div>
-          <div>Bedeutung / Wann anwenden</div>
-        </div>
+        <tr class="section-row">
+          <td colspan="2">Kraft, Masse, Beschleunigung</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="fVar">F</span> <span class="plain">=</span> <span class="mVar">m</span> <span class="plain">·</span> <span class="aVar">a</span></td>
+          <td class="meaning">
+            Kraft berechnen, wenn Masse und Beschleunigung gegeben sind.
+            <span class="hint">Für Masse oder Beschleunigung einfach umformen.</span>
+          </td>
+        </tr>
 
-        <section class="group" id="grundlagen">
-          <header class="group-header">
-            <div>
-              <h2 class="group-title">1. Grundlagen: Geschwindigkeit, Strecke, Zeit</h2>
-              <p class="group-copy">Das ist der Startblock. Diese Formeln brauchst du, wenn keine Beschleunigung vorkommt oder wenn du erst einmal die Basisgrößen bestimmen willst.</p>
-            </div>
-            <span class="tag speed">Basis</span>
-          </header>
-          <div class="rows">
-            <article class="row">
-              <div class="cell formula" data-label="Formel">v = Δx / Δt</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Geschwindigkeit v</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Geschwindigkeit berechnen, wenn Strecke und Zeit gegeben sind.</div>
-            </article>
-            <article class="row">
-              <div class="cell formula" data-label="Formel">Δx = v · Δt</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Strecke Δx</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Strecke berechnen bei konstanter Geschwindigkeit.</div>
-            </article>
-            <article class="row">
-              <div class="cell formula" data-label="Formel">Δt = Δx / v</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Zeit Δt</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Zeit berechnen bei konstanter Geschwindigkeit.</div>
-            </article>
-            <article class="row">
-              <div class="cell formula" data-label="Formel">x(t) = v₀ · t + x₀</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Ort / Strecke bei gleichförmiger Bewegung</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Ort oder Strecke bei konstanter Geschwindigkeit berechnen.</div>
-            </article>
-          </div>
-        </section>
+        <tr class="section-row">
+          <td colspan="2">Freier Fall</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="gVar">g</span> <span class="plain">= 9,81 m/s² ≈ 10 m/s²</span></td>
+          <td class="meaning">Erdbeschleunigung auf der Erde.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="v">v</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = </span><span class="gVar">g</span><span class="plain"> · </span><span class="t">t</span></td>
+          <td class="meaning">Geschwindigkeit nach der Fallzeit, wenn der Körper aus der Ruhe fällt.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="x">s</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = ½ · </span><span class="gVar">g</span><span class="plain"> · </span><span class="t">t</span><sup>2</sup></td>
+          <td class="meaning">Gefallene Strecke nach der Zeit <span class="t">t</span>.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="t">t</span> <span class="plain">= √(2</span><span class="x">s</span><span class="plain"> / </span><span class="gVar">g</span><span class="plain">)</span></td>
+          <td class="meaning">Fallzeit berechnen, wenn die Fallstrecke <span class="x">s</span> gegeben ist.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="v">v</span> <span class="plain">= √(2</span><span class="gVar">g</span><span class="plain"> · </span><span class="x">s</span><span class="plain">)</span></td>
+          <td class="meaning">Geschwindigkeit nach einer bestimmten Fallstrecke <span class="x">s</span>.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="x">h</span><span class="plain">(</span><span class="t">t</span><span class="plain">) = </span><span class="x">h₀</span><span class="plain"> − ½ · </span><span class="gVar">g</span><span class="plain"> · </span><span class="t">t</span><sup>2</sup></td>
+          <td class="meaning">Höhe über dem Boden nach der Zeit <span class="t">t</span>, wenn Start aus Höhe <span class="x">h₀</span>.</td>
+        </tr>
 
-        <section class="group" id="beschleunigung">
-          <header class="group-header">
-            <div>
-              <h2 class="group-title">2. Beschleunigung und Bremsen</h2>
-              <p class="group-copy">Diesen Block nimmst du, sobald sich die Geschwindigkeit verändert. Hier geht es um Beschleunigung, Geschwindigkeitsänderung und Ortsfunktion mit a.</p>
-            </div>
-            <span class="tag acc">Änderung</span>
-          </header>
-          <div class="rows">
-            <article class="row">
-              <div class="cell formula" data-label="Formel">a = Δv / Δt</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Beschleunigung a</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Beschleunigung berechnen, wenn Geschwindigkeitsänderung und Zeit gegeben sind.</div>
-            </article>
-            <article class="row">
-              <div class="cell formula" data-label="Formel">Δv = a · Δt</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Geschwindigkeitsänderung Δv</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Geschwindigkeitsänderung bei Beschleunigung berechnen.</div>
-            </article>
-            <article class="row">
-              <div class="cell formula" data-label="Formel">v(t) = a · t + v₀</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Geschwindigkeit nach Zeit</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Geschwindigkeit nach einer Zeit bei Beschleunigung oder Bremsen berechnen.</div>
-            </article>
-            <article class="row">
-              <div class="cell formula" data-label="Formel">x(t) = ½ · a · t² + v₀ · t + x₀</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Ort / Strecke mit Beschleunigung</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Ort oder Strecke bei Beschleunigung oder Bremsen berechnen.</div>
-            </article>
-          </div>
-        </section>
-
-        <section class="group" id="kraft">
-          <header class="group-header">
-            <div>
-              <h2 class="group-title">3. Kraft, Masse und Beschleunigung</h2>
-              <p class="group-copy">Diese Formeln gehören zusammen. Wenn zwei Größen gegeben sind, kannst du die dritte berechnen.</p>
-            </div>
-            <span class="tag force">Kräfte</span>
-          </header>
-          <div class="rows">
-            <article class="row">
-              <div class="cell formula" data-label="Formel">F = m · a</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Kraft F</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Kraft berechnen, wenn Masse und Beschleunigung gegeben sind.</div>
-            </article>
-            <article class="row">
-              <div class="cell formula" data-label="Formel">a = F / m</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Beschleunigung a</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Beschleunigung berechnen, wenn Kraft und Masse gegeben sind.</div>
-            </article>
-            <article class="row">
-              <div class="cell formula" data-label="Formel">m = F / a</div>
-              <div class="cell solve" data-label="Gesucht / Thema">Masse m</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Masse berechnen, wenn Kraft und Beschleunigung gegeben sind.</div>
-            </article>
-          </div>
-        </section>
-
-        <section class="group" id="umrechnung">
-          <header class="group-header">
-            <div>
-              <h2 class="group-title">4. Umrechnung der Geschwindigkeit</h2>
-              <p class="group-copy">Diese beiden Zeilen sind reine Einheitenumrechnung. Sie helfen dir, wenn Aufgaben zwischen km/h und m/s wechseln.</p>
-            </div>
-            <span class="tag unit">Einheiten</span>
-          </header>
-          <div class="rows">
-            <article class="row">
-              <div class="cell formula" data-label="Formel">1 m/s = 3,6 km/h</div>
-              <div class="cell solve" data-label="Gesucht / Thema">m/s → km/h</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Von m/s in km/h umrechnen: mal 3,6.</div>
-            </article>
-            <article class="row">
-              <div class="cell formula" data-label="Formel">1 km/h = 1 / 3,6 m/s</div>
-              <div class="cell solve" data-label="Gesucht / Thema">km/h → m/s</div>
-              <div class="cell meaning" data-label="Bedeutung / Wann anwenden">Von km/h in m/s umrechnen: durch 3,6.</div>
-            </article>
-          </div>
-        </section>
-      </section>
-
-      <p class="footer">Erstellt aus der Tabelle aus „Formelsammlung Physik: Bewegungen“ und für eine bessere Lernreihenfolge neu sortiert.</p>
-    </main>
-  </div>
+        <tr class="section-row">
+          <td colspan="2">Umrechnung</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="plain">1 m/s = 3,6 km/h</span></td>
+          <td class="meaning">Von m/s in km/h umrechnen: mal 3,6.</td>
+        </tr>
+        <tr>
+          <td class="formula"><span class="plain">1 km/h = 1 / 3,6 m/s</span></td>
+          <td class="meaning">Von km/h in m/s umrechnen: durch 3,6.</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
 </body>
 </html>
